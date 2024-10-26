@@ -148,7 +148,7 @@
 
 <script setup>
 import '../Main/css/mainPage.css'
-import imageUrlSc from '../../../../storage/app/public/Screenshot 2024-08-27 124053.png';
+import imageUrlSc from '../../assets/cat.png';
 import {imageUrl} from '../../imageUtil.js';
 import {onMounted, ref, watch} from 'vue';
 import apiClient from "../../axios/index.js";
