@@ -84,7 +84,6 @@
 
 <script setup>
 import { ref } from 'vue';
-import { Inertia } from '@inertiajs/inertia';
 import apiClient from "../../axios/index.js";
 import Navbar from "../Navbar.vue";
 import Footer from "../Footer.vue";
