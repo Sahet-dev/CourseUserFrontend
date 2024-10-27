@@ -7,8 +7,9 @@
                     <!-- Logo -->
                     <div class="relative shrink-0 flex items-center mr-2">
                         <router-link to="/" class="flex items-center">
-                            <img :src="image" alt="Application Logo" class="w-16 h-16 items-center">
-                            <span class="hidden md:block ml-2">TmCourses</span>
+                            <span class="text-xl md:text-2xl font-bold text-xl lg:hidden">TM</span>
+                            <span class="hidden md:inline lg:inline font-bold text-xl md:text-2xl">TmCourses</span>
+
                         </router-link>
                     </div>
 
@@ -189,9 +190,9 @@ import { useRouter } from 'vue-router';
 import apiClient from "../axios/index.js";
 import { UserCircleIcon as UserIconSolid } from "@heroicons/vue/24/solid";
 import { ArrowLeftStartOnRectangleIcon, Bars3Icon } from "@heroicons/vue/24/outline";
-import image from "../assets/IconTm.png";
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
 import { ChevronDownIcon } from '@heroicons/vue/20/solid';
+import image from '../assets/IconTm.png';
 
 const router = useRouter();
 const showingNavigationDropdown = ref(false);

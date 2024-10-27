@@ -148,7 +148,6 @@
 
 <script setup>
 import '../Main/css/mainPage.css'
-import imageUrlSc from '../../assets/cat.png';
 import {imageUrl} from '../../imageUtil.js';
 import {onMounted, ref, watch} from 'vue';
 import apiClient from "../../axios/index.js";
@@ -160,7 +159,7 @@ import {useRouter} from "vue-router";
 import CoursesList from "../CoursesList.vue";
 
 
-const image = imageUrlSc;
+import image from '../../assets/cat.png';
 const transitionsCompleted = ref(0);
 const totalTransitions = 4;
 const searchQuery = ref('');
@@ -371,3 +370,4 @@ onMounted(() => {
 
 
 </script>
+
