@@ -7,7 +7,7 @@
                     <!-- Logo -->
                     <div class="relative shrink-0 flex items-center mr-2">
                         <router-link to="/" class="flex items-center">
-                            <span class="text-xl md:text-2xl font-bold text-xl lg:hidden">TM</span>
+                            <span class="text-xl md:text-2xl lg:hidden">TM-C</span>
                             <span class="hidden md:inline lg:inline font-bold text-xl md:text-2xl">TmCourses</span>
 
                         </router-link>
@@ -180,6 +180,8 @@
                 <router-link to="/prices" class="block px-4 py-2 text-sm">Prices</router-link>
                 <router-link to="/courses/catalog" class="block px-4 py-2 text-sm">Courses catalog</router-link>
                 <router-link to="/profile/:id" class="block px-4 py-2 text-sm">Profile</router-link>
+                <button  @click="handleLogout" class="block px-4 py-2 text-sm">Logout</button>
+
             </div>
         </div>
     </nav>
