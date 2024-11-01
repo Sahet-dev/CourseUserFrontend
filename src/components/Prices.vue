@@ -82,11 +82,11 @@
 
                         <!-- Display discounted price and original price with a line-through -->
                         <div class="mt-4 flex justify-center items-baseline text-6xl font-extrabold text-indigo-600">
-                            $119.99
+                            $149.99
                             <span class="ml-1 text-2xl font-medium text-gray-500">{{ $t('subscription.yearly.period') }}</span>
                         </div>
                         <div class="mt-2 flex justify-center items-center text-xl">
-                            <span class="text-gray-400 line-through">$149.99</span>
+                            <span class="text-gray-400 line-through">$180.00</span>
                             <span class="ml-2 text-green-600 font-semibold">{{ $t('subscription.yearly.savings') }}</span>
                         </div>
                     </div>
