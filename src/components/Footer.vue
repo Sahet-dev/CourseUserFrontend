@@ -4,44 +4,52 @@
             <div class="footer-content">
                 <!-- Footer Logo & About -->
                 <div class="footer-section about">
-                    <h2 class="logo">CourseApp.com</h2>
-                    <p>
-                        Learn foreign languages and technology with our expertly crafted courses. Join us to explore and grow your skills.
-                    </p>
+                    <h2 class="logo">{{ $t('footer.logo') }}</h2>
+                    <p>{{ $t('footer.description') }}</p>
                 </div>
 
                 <!-- Footer Navigation Links -->
                 <div class="footer-section links">
-                    <h3>Quick Links</h3>
+                    <h3>{{ $t('footer.links.quickLinks') }}</h3>
                     <ul>
                         <li>
-                            <router-link to="/" >Home</router-link>
+                            <router-link to="/">{{ $t('footer.links.home') }}</router-link>
                         </li>
                         <li>
-                            <router-link to="/courses/catalog" >Courses catalog</router-link>
+                            <router-link to="/courses/catalog">{{ $t('footer.links.coursesCatalog') }}</router-link>
                         </li>
-                        <li><a href="#">About Me & Contact</a></li>
-                        <li><button @click="goToFeedback">Feedback</button></li>
-
+                        <li><a href="#">{{ $t('footer.links.aboutAndContact') }}</a></li>
+                        <li><button @click="goToFeedback">{{ $t('footer.links.feedback') }}</button></li>
                     </ul>
                 </div>
 
                 <!-- Footer Contact Information -->
                 <div class="footer-section contact">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Romania. Cluj-Napoca City</p>
-                    <p><i class="fas fa-phone"></i> +40 (0770) 578-771</p>
+                    <h3>{{ $t('footer.contact.title') }}</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> {{ $t('footer.contact.address') }}</p>
+                    <p><i class="fas fa-phone"></i> {{ $t('footer.contact.phone') }}</p>
                     <p><i class="fas fa-envelope"></i> support@courseapp.com</p>
                 </div>
 
                 <!-- Footer Social Media Links -->
                 <div class="footer-section social">
-                    <h3>Follow Us</h3>
+                    <h3>{{ $t('footer.social.followMe') }}</h3>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <Instagram width="30px" height="30px" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="bg-white">
+                                        <YouTubeIcon width="30px" height="30px" />
+                                    </span>
+
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -49,12 +57,16 @@
 
         <!-- Footer Bottom -->
         <div class="footer-bottom">
-            &copy; 2024 CourseApp.com | Designed by Sahet
+            {{ $t('footer.copyright') }} |
+            {{ $t('footer.copyright2') }}
         </div>
     </footer>
 </template>
 <script setup>
 import { useRouter } from 'vue-router';
+import TiktokIcon from "./socialmed/Tiktok.vue";
+import Instagram from "./socialmed/Instagram.vue";
+import YouTubeIcon from "./socialmed/Youtube.vue";
 const router = useRouter();
 function goToFeedback(){
     router.push({ name: 'Feedback'});
@@ -62,7 +74,7 @@ function goToFeedback(){
 </script>
 <style scoped>
 .footer {
-    background-color: #2d3748; /* Dark gray background */
+    background-color: #2d3748;
     color: white;
     padding: 40px 0;
     font-size: 0.875rem;

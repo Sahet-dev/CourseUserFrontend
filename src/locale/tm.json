@@ -1,0 +1,251 @@
+{
+    "TmCourses": "T-Kurslar",
+    "searchCoursesPlaceholder": "Kurslar gözlegi...",
+    "searchButton": "Gözleg",
+    "pricesButton": "Bahalar",
+    "reviewsButton": "Synlar",
+    "loginButton": "Gir",
+    "registerButton": "Hasap aç",
+    "profileButton": "Profil",
+    "logoutButton": "Çykmak",
+    "feedbackButton": "Pikir",
+    "coursesCatalogButton": "Kurslaryň katalogy",
+    "hero": {
+        "title": "Iň oňat daşary ýurt dili we tehnologiýa okuwlary",
+        "subtitle": "Dünýäni öwrenmegiň aňsat ýoly",
+        "description": "120+ wideo okuw kurslarymyz boýunça özüň ýol görkeziji üçin  kurs saýlaň",
+        "startSubscription": "Abonement aç",
+        "browseCatalog": "Katalogy gözden geçiriň"
+    },
+    "search": {
+        "title": "Näme öwrenersiň?",
+        "placeholder": "Kurslary gözlemek...",
+        "button": "Gözle"
+    },
+    "popularCourses": {
+        "title": "Meşhur Kurslar",
+        "seeAll": "Doly tanyş"
+    },
+    "latestCourses": {
+        "title": "Täze Kurslar",
+        "seeAll": "Doly tanyş"
+    },
+    "testimonials": {
+        "title": "Adamlar näme diýýär...",
+        "more": "Ikirjeňlikmi? Başga pikirlerň käbirini oka"
+    },
+    "cta": {
+        "title": "Bize bilen öwreniň we özňizden peýdaly zatlar galdyryň",
+        "description": "Tehnologiýa we beýlekiler boýunça okuwlarymyz bilen has çalt edip bilersiňiz!",
+        "startSubscription": "Abonement aç"
+    },
+    "subscription": {
+        "login": {
+            "please": "Haýyst ilki ",
+            "loginLink": " içeri giriň",
+            "firstThen": " soňra"
+        },
+        "title": {
+            "choose": "Isleýän abunanyň",
+            "plan": " meýilnamasyny saýlaň"
+        },
+        "monthly": {
+            "title": "Aýlyk meýilnama",
+            "price": "$14.99",
+            "period": "/aý"
+        },
+        "yearly": {
+            "title": "Ýyllyk meýilnama",
+            "price": "$119.99",
+            "period": "/ýyl",
+            "originalPrice": "$149.99",
+            "savings": "$30 tygşytla"
+        },
+        "features": {
+            "allCourses": "Ähli kurslara girmek hukugy",
+            "cancel": "Islendik wagt abunany ýatyrmak",
+            "support": "Goldaw goşulan",
+            "annualSavings": "Her ýylda $30 tygşytla"
+        },
+        "buttons": {
+            "selectMonthly": "Aýlyk meýilnamany saýla",
+            "selectYearly": "Ýyllyk meýilnamany saýla"
+        },
+        "selected": {
+            "prefix": "Siz ",
+            "monthly": "Aýlyk",
+            "yearly": "Ýyllyk",
+            "suffix": "meýilnamany bellediňiz."
+        }
+    },
+    "whyUs": {
+        "title": "Näme üçin tm-CourseApp.com?",
+        "features": {
+            "challenges": "Öwrenmegi tizlendirýän meseleler",
+            "trusted": "Siziň ýaly adamlar tarapyndan ynanylýan",
+            "tutorials": "Ökde hünärmenler tarapyndan taýarlanylan Kurslar",
+            "guides": "Kurslardan  gollanmalary  ýüklemek mümkinçiligi"
+        }
+    },
+    "footer": {
+        "logo": "CourseApp.com",
+        "description": "Daşary ýurt dillerini we tehnologiýalary hünärmenlerimiz tarapyndan işlenip düzülen kurslar bilen öwreniň. Ulgamyňyza goşulyp, başarnyklaryňyzy ösdüriň.",
+        "links": {
+            "quickLinks": "Çalt baglanyşyklar",
+            "home": "Baş sahypa",
+            "coursesCatalog": "Kurslar katalogy",
+            "aboutAndContact": "Meniň hakda we Habarlaşmak",
+            "feedback": "Teswir"
+        },
+        "contact": {
+            "title": "Habarlaşmak",
+            "address": "Rumyniýa. Cluj-Napoca Şäheri",
+            "phone": "+40 (0770) 578-771",
+            "email": "support@courseapp.com"
+        },
+        "social": {
+            "followMe": "Sosial mediada yzarla"
+        },
+        "copyright": "© 2024 CourseApp.com",
+        "copyright2": "   Gurnan we Dizaýn eden Sähetmyrat"
+    },
+    "common": {
+        "error": "Säwlik"
+    },
+    "courseCatalog": {
+        "title": "Kurs Katalogy",
+        "enrollNow": "başlamak"
+    },
+    "pagination": {
+        "previous": "Öňki",
+        "next": "Indiki",
+        "pageInfo": "{total} sahypanyň {current}-si"
+    },
+    "courseSearchCatalog": {
+        "title": "Kurs Gözlegi"
+    },
+    "searchResults": {
+        "resultsFound": "Tapylan netijeler : {count} sany",
+        "forSearchTerm": "Gözlenilen termin: \"{term}\"",
+        "occurrencesCount": "\"{term}\" üçin gabat gelenler: {count}",
+        "noResults": "Gözleg ölçeglerine laýyk gelýän kurslar tapylmady."
+    },
+    "review": {
+        "submit": {
+            "title": "Saýt barada pikirleriňizi paýlaşyň",
+            "rating": "Reýting:",
+            "comment": "Teswir:",
+            "button": {
+                "submitting": "Ugradylýar...",
+                "submit": "Ibermek"
+            }
+        },
+        "list": {
+            "title": "Sahypa synlary",
+            "empty": "Häzirlikçe syn ýok.",
+            "rating": "Reýting: {rating} ýyldyz"
+        }
+    },
+    "feedback": {
+        "title": "Goldaw soraň ýa-da maslahat ugratmak",
+        "type": {
+            "label": "Görnüşi",
+            "options": {
+                "support": "Goldaw",
+                "feedback": "Maslahat"
+            }
+        },
+        "message": "Habar",
+        "submit": "Ugrat"
+    },
+    "login": {
+        "title": "Hoş Geldiňiz",
+        "email": {
+            "label": "Email",
+            "placeholder": "siziň@example.com"
+        },
+        "password": {
+            "label": "Açar söz",
+            "placeholder": "••••••••"
+        },
+        "rememberMe": "Meni ýatda sakla",
+        "forgotPassword": "Açar sözi unutdyňyzmy?",
+        "button": {
+            "default": "Gir",
+            "loading": "Giriş edilýär..."
+        }
+    },
+    "register": {
+        "title": "Hasap dörediň",
+        "alreadyHaveAccount": "Hasabyňyz barmy?",
+        "signInLink": "Giriş ediň",
+        "form": {
+            "name": {
+                "label": "Ady",
+                "placeholder": "Adyňyz"
+            },
+            "email": {
+                "label": "Email salgysy",
+                "placeholder": "Email salgysy"
+            },
+            "password": {
+                "label": "Açar söz",
+                "placeholder": "Açar söz"
+            },
+            "passwordConfirmation": {
+                "label": "Açar sözi tassyklaň",
+                "placeholder": "Açar sözi tassyklaň"
+            },
+            "submit": "Hasaba al"
+        }
+    },
+
+    "course": {
+        "info": {
+            "lessons": "sany sapak",
+            "completed": "% bitdi",
+            "totalLessons": "Sapaklar",
+            "select": "Sapak saýlaň:"
+        },
+        "navigation": {
+            "previous": "Öňki",
+            "next": "Indiki"
+        },
+        "tabs": {
+            "guides": "Gollanmalar",
+            "comments": "Teswirler"
+        },
+        "access": {
+            "restricted": {
+                "title": "Elýeterlilik Çäklendirilen",
+                "message": "Bu kursuň sapaklaryna girmek üçin Abuna açyň ýa-da kursy satyn alyň.",
+                "button": "Abuna açmak"
+            },
+            "purchase": {
+                "message": "Bu kursuň sapaklaryna girmek üçin abuna boluň ýa-da  satyn alyň.",
+                "button": "Abuna açmak"
+            }
+        },
+        "comments": {
+            "section": {
+                "title": "Teswirler",
+                "noComments": "Bu sapak üçin teswir ýok.",
+                "addComment": "Teswir goş",
+                "likes": "Halananlar:",
+                "actions": {
+                    "like": "Halamak",
+                    "unlike": "Gaýtmak"
+                },
+                "input": {
+                    "placeholder": "Teswiriňizi şu ýerde ýazyň..."
+                },
+                "submit": "Teswiri Ugrat"
+            }
+        }
+    }
+
+
+
+}
+
+

@@ -29,10 +29,10 @@
                         <!-- Course Info Indicator -->
                         <div class="mb-4">
                             <p class="text-gray-600 text-sm">
-                                {{ totalLessons }} Lessons | {{ formattedTotalDuration }} | {{ completionPercentage }}% Completed
+                                {{ totalLessons }} {{ $t('course.info.totalLessons') }} | {{ formattedTotalDuration }} | {{ completionPercentage }} {{ $t('course.info.completed') }}
                             </p>
                         </div>
-                        <h2 class="text-lg font-bold mb-4">Lessons </h2>
+                        <h2 class="text-lg font-bold mb-4">{{ $t('course.info.lessons') }} </h2>
                         <ul>
                             <li v-for="lesson in course.lessons" :key="lesson.id">
                                 <button
@@ -56,12 +56,13 @@
                             <!-- Course Info Indicator -->
                             <div class="mb-4">
                                 <p class="text-gray-600 text-sm">
-                                    {{ totalLessons }} Lessons | {{ formattedTotalDuration }} | {{ completionPercentage }}% Completed
+                                    {{ totalLessons }} {{$t('course.info.totalLessons') }} | {{ formattedTotalDuration }} | {{ completionPercentage }} {{ $t('course.info.completed') }}
                                 </p>
                             </div>
                             <div class="flex items-center justify-between mb-2">
                                 <label for="mobile-lesson-select" class="text-gray-700 font-bold">
-                                    Select a Lesson:
+                                    {{ $t('course.info.select') }}
+
                                 </label>
 
                                 <!-- Bookmark Button on the right -->
@@ -111,10 +112,10 @@
                                     v-if="userHasAccess === false && !selectedLesson.video_url"
                                     class="video w-full h-64 flex flex-col items-center justify-center bg-gray-300 text-gray-600 rounded mb-4 p-4"
                                 >
-                                    <h2 class="text-xl font-semibold mb-4 text-center">Access Restricted</h2>
-                                    <p class="mb-6 text-center">Please subscribe or purchase to access this course's lessons.</p>
+                                    <h2 class="text-xl font-semibold mb-4 text-center">{{ $t('course.access.restricted.title') }}</h2>
+                                    <p class="mb-6 text-center">{{ $t('course.access.restricted.message') }}</p>
                                     <button @click="openPrices" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                                        Subscribe
+                                        {{ $t('course.access.restricted.button') }}
                                     </button>
                                 </div>
                             </div>
@@ -129,14 +130,14 @@
                                     class="flex items-center justify-center bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 transition duration-200"
                                 >
                                     <ChevronDoubleLeftIcon class="w-5 h-5"/>
-                                    <span class="hidden lg:inline-block ml-3 text-sm lg:text-base">Previous</span>
+                                    <span class="hidden lg:inline-block ml-3 text-sm lg:text-base">{{ $t('course.navigation.previous') }}</span>
                                 </button>
                                 <button
                                     @click="goToNextLesson"
                                     :disabled="isLastLesson"
                                     class="flex items-center justify-center bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 transition duration-200"
                                 >
-                                    <span class="hidden lg:inline-block mr-3 text-sm lg:text-base">Next  </span>
+                                    <span class="hidden lg:inline-block mr-3 text-sm lg:text-base">{{ $t('course.navigation.next') }}  </span>
                                     <ChevronDoubleRightIcon class="w-5 h-5"/>
                                 </button>
                             </div>
@@ -153,7 +154,7 @@
                                         <template v-else>
                                             <BookOpenIcon class="w-5 h-5 orange" />
                                         </template>
-                                        <span   :class="[selected ? 'selected-tab' : 'orange']">Guides</span>
+                                        <span   :class="[selected ? 'selected-tab' : 'orange']">{{ $t('course.tabs.guides') }}</span>
                                     </Tab>
                                     <Tab v-slot="{ selected }" as="button" class="flex items-center space-x-2 outline-none focus:outline-none
                                         focus:ring-2 px-3">
@@ -164,7 +165,7 @@
                                         <template v-else>
                                             <ChatBubbleLeftRightIcon class="w-5 h-5 orange" />
                                         </template>
-                                        <span class="  ml-2" :class="[selected ? 'selected-tab' : 'orange']">Comments</span>
+                                        <span class="  ml-2" :class="[selected ? 'selected-tab' : 'orange']">{{ $t('course.tabs.comments') }}</span>
                                     </Tab>
 
                                 </TabList>
@@ -184,7 +185,7 @@
                                             <div class="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg">
                                                 <!-- Check if there are any comments -->
                                                 <div v-if="comments.length > 0">
-                                                    <h2 class="text-xl sm:text-2xl font-semibold mb-4">Comments</h2>
+                                                    <h2 class="text-xl sm:text-2xl font-semibold mb-4">{{ $t('course.comments.section.title') }}</h2>
                                                     <div v-for="comment in comments" :key="comment.id" class="mb-4 sm:mb-6 p-3 sm:p-4 bg-gray-100 rounded-md">
                                                         <div class="flex items-center mb-2 cursor-pointer hover:underline" @click="goToUser(comment.user.id)">
                                                             <div class="flex items-center space-x-4"  >
@@ -197,17 +198,17 @@
                                                             </div>
                                                         </div>
                                                         <p class="text-gray-800 mb-2 break-words text-sm sm:text-base">{{ comment.comment }}</p>
-                                                        <div class="text-xs sm:text-sm text-gray-500">Likes: {{ comment.likes_count }}</div>
+                                                        <div class="text-xs sm:text-sm text-gray-500">{{ $t('course.comments.section.likes') }}  {{ comment.likes_count }}</div>
                                                         <div v-if="currentUser" class="mt-2 flex space-x-2 sm:space-x-4">
                                                             <button @click="likeComment(course.id, selectedLesson.id, comment)"
                                                                     class="text-blue-500 text-xs sm:text-sm hover:underline">
                                                                 <div v-if="comment.liked_by_user" class="flex items-center">
                                                                     <HandThumbUpIconSolid class="w-4 h-4"/>
-                                                                    <span class="ml-2">Unlike</span>
+                                                                    <span class="ml-2">{{ $t('course.comments.section.actions.unlike') }}</span>
                                                                 </div>
                                                                 <div v-else class="flex items-center">
                                                                     <HandThumbUpIcon class="w-4 h-4"/>
-                                                                    <span class="ml-2">Like</span>
+                                                                    <span class="ml-2">{{ $t('course.comments.section.actions.like') }}</span>
                                                                 </div>
                                                             </button>
                                                         </div>
@@ -216,15 +217,15 @@
 
                                                 <!-- If there are no comments -->
                                                 <div v-else>
-                                                    <p class="text-gray-500 text-sm sm:text-base">No comments available for this lesson.</p>
+                                                    <p class="text-gray-500 text-sm sm:text-base">{{ $t('course.comments.section.noComments') }}</p>
                                                 </div>
 
                                                 <div class="mt-6" v-if="currentUser">
-                                                    <h2 class="text-xl sm:text-2xl font-semibold mb-4">Add a Comment</h2>
+                                                    <h2 class="text-xl sm:text-2xl font-semibold mb-4">{{ $t('course.comments.section.addComment') }}</h2>
                                                     <form @submit.prevent="submitComment" class="flex flex-col space-y-4">
-                                                        <textarea v-model="newComment" rows="3" placeholder="Type your comment here..." class="p-2 border border-gray-300 rounded-md"></textarea>
+                                                        <textarea v-model="newComment" rows="3" :placeholder=" $t('course.comments.section.input.placeholder') " class="p-2 border border-gray-300 rounded-md"></textarea>
                                                         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                                                            Submit Comment
+                                                            {{ $t('course.comments.section.submit') }}
                                                         </button>
                                                     </form>
                                                 </div>
@@ -245,9 +246,9 @@
                             <div v-for="lesson in titleOnlyLessons" :key="lesson.id">
                                 <h4 class="text-lg font-semibold mb-2">{{ lesson.title }}</h4>
                                 <div v-if="lesson.id > 4 && !userHasAccess" class="text-center mt-4">
-                                    <p class="text-red-600">Please subscribe or purchase to access this course's lessons.</p>
+                                    <p class="text-red-600">{{ $t('course.access.purchase.message') }}</p>
                                     <button @click="redirectToPurchase" class="bg-blue-500 text-white px-4 py-2 rounded mt-2">
-                                        Subscribe or Purchase
+                                        {{ $t('course.access.purchase.button') }}
                                     </button>
                                 </div>
                             </div>

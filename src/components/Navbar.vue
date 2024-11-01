@@ -7,19 +7,17 @@
                     <!-- Logo -->
                     <div class="relative shrink-0 flex items-center mr-2">
                         <router-link to="/" class="flex items-center">
-                            <span class="text-xl md:text-2xl lg:hidden">TM-C</span>
+                            <span class="text-xl md:text-2xl lg:hidden font-bold">Tm_C</span>
                             <span class="hidden md:inline lg:inline font-bold text-xl md:text-2xl">TmCourses</span>
-
                         </router-link>
                     </div>
-
 
                     <!-- Search Input -->
                     <div class="flex-1 sm:ml-6 flex items-center justify-center">
                         <input
                             v-model="searchQuery"
                             type="text"
-                            placeholder="Search courses..."
+                            :placeholder="$t('searchCoursesPlaceholder')"
                             class="p-2 border rounded w-full sm:w-1/2"
                         />
                         <button
@@ -27,22 +25,29 @@
                             :disabled="!searchQuery.trim()"
                             class="ml-2 p-2 border rounded bg-blue-500 text-white hover:bg-blue-600"
                         >
-                            Search
+                            {{ $t('searchButton') }}
                         </button>
                     </div>
                 </div>
 
                 <div class="hidden sm:flex sm:items-center sm:ml-6">
 
+                    <button v-if="currentLocale !== 'EN'" @click="changeLocale('EN')" class="p-2 rounded hover:text-gray-100 hover:bg-gray-200 focus:outline-none transition ease-in-out duration-150">
+                        <Eng width="40px" height="30px" />
+                    </button>
 
+                    <!-- Turkmen Button -->
+                    <button v-if="currentLocale !== 'TM'" @click="changeLocale('TM')" class="p-2 rounded hover:text-gray-100 hover:bg-gray-200 focus:outline-none transition ease-in-out duration-150">
+                        <Tm width="40px" height="30px" />
+                    </button>
 
                     <!-- Prices Button -->
-                    <div class="relative hidden sm:flex sm:items-center sm:ml-6 mr-2">
+                    <div :key="i18n.global.locale" class="relative hidden sm:flex sm:items-center sm:ml-6 mr-2">
                         <button
                             @click="openPrices"
                             class="relative inline-flex items-center border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                         >
-                            Prices
+                            {{ $t('pricesButton') }}
                         </button>
                     </div>
                     <div class="relative hidden sm:flex sm:items-center sm:ml-6 mr-2">
@@ -50,18 +55,17 @@
                             @click="goToReviews"
                             class="relative inline-flex items-center border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                         >
-                            Reviews
+                            {{ $t('reviewsButton') }}
                         </button>
                     </div>
-
 
                     <!-- Authentication Links -->
                     <template v-if="!user">
                         <router-link to="/login" class="text-gray-200 border-b border-gray-200 bg-blue-500 p-2 rounded hover:text-gray-100 hover:bg-blue-800 focus:outline-none transition ease-in-out duration-150">
-                            Login
+                            {{ $t('loginButton') }}
                         </router-link>
                         <router-link to="/register" class="ml-4 text-gray-500 hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            Register
+                            {{ $t('registerButton') }}
                         </router-link>
                     </template>
                     <template v-else>
@@ -72,7 +76,7 @@
                                         class="inline-flex w-full justify-center rounded-md  px-4 py-2 text-sm font-medium  hover:bg-black/10 focus:outline-none"
                                     >
                                         <UserIconSolid class="w-5 h-5 mr-2" />
-                                        {{user.name}}
+                                        {{ user.name }}
 
                                         <ChevronDownIcon
                                             class="-mr-1 ml-2 h-5 w-5 text-violet-200 hover:text-violet-100"
@@ -95,7 +99,7 @@
                                         <div class="px-1 py-1">
                                             <MenuItem v-slot="{ active }">
                                                 <button @click="goToProfile(user.id)"
-                                                    :class="[
+                                                        :class="[
                                                       active ? 'bg-blue-500 text-white' : 'text-gray-900',
                                                       'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                                                     ]"
@@ -105,22 +109,22 @@
                                                         class="mr-2 h-5 w-5 text-blue-400"
                                                         aria-hidden="true"
                                                     />
-                                                    Profile
+                                                    {{ $t('profileButton') }}
                                                 </button>
                                             </MenuItem>
                                             <MenuItem v-slot="{ active }">
-                                                <button  @click="handleLogout"
-                                                    :class="[
+                                                <button @click="handleLogout"
+                                                        :class="[
                                                       active ? 'bg-blue-500 text-white' : 'text-gray-900',
                                                       'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                                                     ]"
                                                 >
                                                     <ArrowLeftStartOnRectangleIcon
-                                                    :active="active"
+                                                        :active="active"
                                                         class="mr-2 h-5 w-5 text-blue-400"
                                                         aria-hidden="true"
                                                     />
-                                                    Logout
+                                                    {{ $t('logoutButton') }}
                                                 </button>
                                             </MenuItem>
                                         </div>
@@ -165,36 +169,59 @@
             :class="{ 'dropdown-menu open': showingNavigationDropdown, 'dropdown-menu': !showingNavigationDropdown }"
             class="sm:hidden"
         >
-            <div class="pt-2 pb-3 space-y-1" v-if= "!user">
+            <div class="pt-2 pb-3 space-y-1" v-if="!user">
                 <!-- Authentication Links -->
-                <router-link to="/login" class="block px-4 py-2 text-sm">Login </router-link>
-                <router-link to="/register" class="block px-4 py-2 text-sm">Register</router-link>
-                <router-link to="/prices" class="block px-4 py-2 text-sm">Prices</router-link>
-                <router-link to="/courses/catalog" class="block px-4 py-2 text-sm">Courses catalog</router-link>
-
+                <router-link to="/login" class="block px-4 py-2 text-sm">{{ $t('loginButton') }}</router-link>
+                <router-link to="/register" class="block px-4 py-2 text-sm">{{ $t('registerButton') }}</router-link>
+                <router-link to="/prices" class="block px-4 py-2 text-sm">{{ $t('pricesButton') }}</router-link>
+                <router-link to="/courses/catalog" class="block px-4 py-2 text-sm">{{ $t('coursesCatalogButton') }}</router-link>
             </div>
 
             <div class="pt-2 pb-3 space-y-1" v-else>
                 <!-- Authentication Links -->
-                <router-link to="/feedback" class="block px-4 py-2 text-sm">Feedback</router-link>
-                <router-link to="/prices" class="block px-4 py-2 text-sm">Prices</router-link>
-                <router-link to="/courses/catalog" class="block px-4 py-2 text-sm">Courses catalog</router-link>
-                <router-link to="/profile/:id" class="block px-4 py-2 text-sm">Profile</router-link>
-                <button  @click="handleLogout" class="block px-4 py-2 text-sm">Logout</button>
-
+                <router-link to="/feedback" class="block px-4 py-2 text-sm">{{ $t('feedbackButton') }}</router-link>
+                <router-link to="/prices" class="block px-4 py-2 text-sm">{{ $t('pricesButton') }}</router-link>
+                <router-link to="/courses/catalog" class="block px-4 py-2 text-sm">{{ $t('coursesCatalogButton') }}</router-link>
+                <router-link to="/profile/:id" class="block px-4 py-2 text-sm">{{ $t('profileButton') }}</router-link>
+                <button @click="handleLogout" class="block px-4 py-2 text-sm">{{ $t('logoutButton') }}</button>
             </div>
         </div>
     </nav>
 </template>
+
 <script setup>
-import { onMounted, ref } from 'vue';
+import {onMounted, ref, watch, watchEffect} from 'vue';
 import { useRouter } from 'vue-router';
 import apiClient from "../axios/index.js";
 import { UserCircleIcon as UserIconSolid } from "@heroicons/vue/24/solid";
 import { ArrowLeftStartOnRectangleIcon, Bars3Icon } from "@heroicons/vue/24/outline";
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
 import { ChevronDownIcon } from '@heroicons/vue/20/solid';
-import image from '../assets/IconTm.png';
+import  i18n from '../i18n.js';
+import Cookies from 'js-cookie';
+import { useI18n } from 'vue-i18n';
+import Eng from "./flag/Eng.vue";
+import Tm from "./flag/Tm.vue";
+
+const { locale } = useI18n();
+
+const currentLocale = ref(locale.value);
+
+
+function changeLocale(newLocale) {
+    locale.value = newLocale;
+    currentLocale.value = newLocale;
+    Cookies.set('preferredLocale', newLocale, { expires: 365 });
+}
+
+
+
+
+
+
+
+
+
 
 const router = useRouter();
 const showingNavigationDropdown = ref(false);
@@ -257,7 +284,17 @@ const openPrices = () => {
 };
 
 onMounted(() => {
+    const savedLocale = Cookies.get('preferredLocale');
+    if (savedLocale) {
+        locale.value = savedLocale;
+        currentLocale.value = savedLocale;
+    } else {
+        locale.value = 'en';
+        currentLocale.value = 'en';
+    }
+
     fetchUser();
+
 });
 </script>
 

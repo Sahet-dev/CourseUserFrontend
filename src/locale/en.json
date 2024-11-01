@@ -1,0 +1,247 @@
+{
+    "TmCourses": "TmCourses",
+    "searchCoursesPlaceholder": "Search courses...",
+    "searchButton": "Search",
+    "pricesButton": "Pricing",
+    "reviewsButton": "Reviews",
+    "loginButton": "Login",
+    "registerButton": "Register",
+    "profileButton": "Profile",
+    "logoutButton": "Logout",
+    "feedbackButton": "Feedback",
+    "coursesCatalogButton": "Courses catalog",
+    "hero": {
+        "title": "The Best Foreign Language & Technology Tutorials",
+        "subtitle": "And the easy way to learn The World",
+        "description": "Select a track for a guided path through our 120+ video tutorial courses",
+        "startSubscription": "Start Subscription",
+        "browseCatalog": "Browse Catalog"
+    },
+    "search": {
+        "title": "What are you going to learn next?",
+        "placeholder": "Search courses...",
+        "button": "Search"
+    },
+    "popularCourses": {
+        "title": "Popular Courses",
+        "seeAll": "See All Courses"
+    },
+    "latestCourses": {
+        "title": "New Courses",
+        "seeAll": "See All Courses"
+    },
+    "testimonials": {
+        "title": "What People are Saying",
+        "more": "Not sure? Read some more testimonials"
+    },
+    "cta": {
+        "title": "Build Something Awesome with Us",
+        "description": "And do it faster with the help of our courses on Technology and more!",
+        "startSubscription": "Start Subscription"
+    }
+,
+    "subscription": {
+        "login": {
+            "please": "Please",
+            "loginLink": "Login",
+            "firstThen": "first, then"
+        },
+        "title": {
+            "choose": "Choose Your",
+            "plan": "Subscription Plan"
+        },
+        "monthly": {
+            "title": "Monthly Plan",
+            "price": "$14.99",
+            "period": "/mo"
+        },
+        "yearly": {
+            "title": "Yearly Plan",
+            "price": "$119.99",
+            "period": "/yr",
+            "originalPrice": "$149.99",
+            "savings": "Save $30"
+        },
+        "features": {
+            "allCourses": "Access all courses",
+            "cancel": "Cancel anytime",
+            "support": "Support included",
+            "annualSavings": "Save $30 annually"
+        },
+        "buttons": {
+            "selectMonthly": "Select Monthly Plan",
+            "selectYearly": "Select Yearly Plan"
+        },
+        "selected": {
+            "prefix": "You have selected the",
+            "monthly": "Monthly",
+            "yearly": "Yearly",
+            "suffix": "plan."
+        }
+    },
+    "whyUs": {
+        "title": "Why tm-CourseApp.com?",
+        "features": {
+            "challenges": "Challenges that help you learn faster",
+            "trusted": "Trusted by people like you",
+            "tutorials": "Tutorials by experts",
+            "guides": "Guides downloads for each tutorial"
+        }
+    },
+    "footer": {
+        "logo": "CourseApp.com",
+        "description": "Learn foreign languages and technology with our expertly crafted courses. Join us to explore and grow your skills.",
+        "links": {
+            "quickLinks": "Quick Links",
+            "home": "Home",
+            "coursesCatalog": "Courses catalog",
+            "aboutAndContact": "About Me & Contact",
+            "feedback": "Feedback"
+        },
+        "contact": {
+            "title": "Contact",
+            "address": "Romania. Cluj-Napoca City",
+            "phone": "+40 (0770) 578-771",
+            "email": "support@courseapp.com"
+        },
+        "social": {
+            "followMe": "Follow Me"
+        },
+        "copyright": "© 2024 CourseApp.com",
+        "copyright2": "   Designed by Sahet"
+    },
+    "common": {
+        "error": "Error"
+    },
+    "courseCatalog": {
+        "title": "Course Catalog",
+        "enrollNow": "Enroll Now"
+    },
+    "pagination": {
+        "previous": "Previous",
+        "next": "Next",
+        "pageInfo": "Page {current} of {total}"
+    },
+    "courseSearchCatalog": {
+        "title": "Search Course"
+    },
+    "searchResults": {
+        "resultsFound": "Results were found: {count}",
+        "forSearchTerm": "For search term: \"{term}\"",
+        "occurrencesCount": "Occurrences of \"{term}\": {count}",
+        "noResults": "No courses found matching the search criteria."
+    },
+    "review": {
+        "submit": {
+            "title": "Submit a Review",
+            "rating": "Rating:",
+            "comment": "Comment:",
+            "button": {
+                "submitting": "Submitting...",
+                "submit": "Submit Review"
+            }
+        },
+        "list": {
+            "title": "Site Reviews",
+            "empty": "No reviews yet.",
+            "rating": "Rating: {rating} stars"
+        }
+    },
+    "feedback": {
+        "title": "Submit Feedback",
+        "type": {
+            "label": "Type",
+            "options": {
+                "support": "Support",
+                "feedback": "Feedback"
+            }
+        },
+        "message": "Message",
+        "submit": "Submit"
+    },
+    "login": {
+        "title": "Welcome Back",
+        "email": {
+            "label": "Email",
+            "placeholder": "you@example.com"
+        },
+        "password": {
+            "label": "Password",
+            "placeholder": "••••••••"
+        },
+        "rememberMe": "Remember me",
+        "forgotPassword": "Forgot password?",
+        "button": {
+            "default": "Sign In",
+            "loading": "Logging in..."
+        }
+    },
+    "register": {
+        "title": "Create your account",
+        "alreadyHaveAccount": "Already have an account?",
+        "signInLink": "Sign in",
+        "form": {
+            "name": {
+                "label": "Name",
+                "placeholder": "Full name"
+            },
+            "email": {
+                "label": "Email address",
+                "placeholder": "Email address"
+            },
+            "password": {
+                "label": "Password",
+                "placeholder": "Password"
+            },
+            "passwordConfirmation": {
+                "label": "Confirm Password",
+                "placeholder": "Confirm password"
+            },
+            "submit": "Register"
+        }
+    },
+    "course": {
+        "info": {
+            "lessons": "Lessons",
+            "completed": "% Completed",
+            "totalLessons": "Lessons",
+            "select": "Select a Lesson:"
+        },
+        "navigation": {
+            "previous": "Previous",
+            "next": "Next"
+        },
+        "tabs": {
+            "guides": "Guides",
+            "comments": "Comments"
+        },
+        "access": {
+            "restricted": {
+                "title": "Access Restricted",
+                "message": "Please subscribe or purchase to access this course's lessons.",
+                "button": "Subscribe"
+            },
+            "purchase": {
+                "message": "Please subscribe or purchase to access this course's lessons.",
+                "button": "Subscribe or Purchase"
+            }
+        },
+        "comments": {
+            "section": {
+                "title": "Comments",
+                "noComments": "No comments available for this lesson.",
+                "addComment": "Add a Comment",
+                "likes": "Likes:",
+                "actions": {
+                    "like": "Like",
+                    "unlike": "Unlike"
+                },
+                "input": {
+                    "placeholder": "Type your comment here..."
+                },
+                "submit": "Submit Comment"
+            }
+        }
+    }
+
+}

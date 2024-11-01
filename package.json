@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.1.0",
     "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.1.5",
     "@stripe/stripe-js": "^4.5.0",
@@ -16,8 +17,10 @@
     "axios": "^1.7.7",
     "chart.js": "^4.4.4",
     "gsap": "^3.12.5",
+    "js-cookie": "^3.0.5",
     "vue": "^3.4.37",
     "vue-chartjs": "^5.3.1",
+    "vue-i18n": "^10.0.4",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {

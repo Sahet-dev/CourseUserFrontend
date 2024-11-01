@@ -2,12 +2,15 @@
     <Navbar />
     <div class="min-h-screen bg-gradient-to-br from-indigo-100 to-purple-100 py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto">
-            <p v-if="!user" class="text-4xl  text-center text-gray-900 mb-8">Please <router-link to="/login"
-            class="text-blue-500 border-b   rounded hover:text-gray-100 hover:bg-blue-800 focus:text-underline transition ease-in-out duration-150">
-                Login
-            </router-link> first, then</p>
+            <p v-if="!user" class="text-4xl text-center text-gray-900 mb-8">
+                {{ $t('subscription.login.please') }}
+                <router-link to="/login" class="text-blue-500 border-b rounded hover:text-gray-100 hover:bg-blue-800 focus:text-underline transition ease-in-out duration-150">
+                    {{ $t('subscription.login.loginLink') }}
+                </router-link>
+                {{ $t('subscription.login.firstThen') }}
+            </p>
             <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-8">
-                Choose Your <span class="text-indigo-600">Subscription Plan</span>
+                {{ $t('subscription.title.choose') }} <span class="text-indigo-600">{{ $t('subscription.title.plan') }}</span>
             </h2>
 
             <div class="mt-12 space-y-8 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:gap-8">
@@ -17,10 +20,10 @@
                     :class="{'ring-2 ring-indigo-600': selectedPlan === 'monthly'}"
                 >
                     <div class="px-6 py-8 bg-white sm:p-10 sm:pb-6">
-                        <h3 class="text-2xl font-semibold text-center text-gray-900">Monthly Plan</h3>
+                        <h3 class="text-2xl font-semibold text-center text-gray-900">{{ $t('subscription.monthly.title') }}</h3>
                         <div class="mt-4 flex justify-center items-baseline text-6xl font-extrabold text-indigo-600">
                             $14.99
-                            <span class="ml-1 text-2xl font-medium text-gray-500">/mo</span>
+                            <span class="ml-1 text-2xl font-medium text-gray-500">{{ $t('subscription.monthly.period') }}</span>
                         </div>
                     </div>
                     <div class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50 space-y-6 sm:p-10 sm:pt-6">
@@ -31,7 +34,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <p class="ml-3 text-base text-gray-700">Access all courses</p>
+                                <p class="ml-3 text-base text-gray-700">{{ $t('subscription.features.allCourses') }}</p>
                             </li>
                             <li class="flex items-start">
                                 <div class="flex-shrink-0">
@@ -39,7 +42,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <p class="ml-3 text-base text-gray-700">Cancel anytime</p>
+                                <p class="ml-3 text-base text-gray-700">{{ $t('subscription.features.cancel') }}</p>
                             </li>
                             <li class="flex items-start">
                                 <div class="flex-shrink-0">
@@ -47,7 +50,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <p class="ml-3 text-base text-gray-700">Support included</p>
+                                <p class="ml-3 text-base text-gray-700">{{ $t('subscription.features.support') }}</p>
                             </li>
                         </ul>
 
@@ -60,7 +63,7 @@
                             }"
                             class="w-full text-white rounded-md px-4 py-3 text-lg font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 transition-colors duration-200"
                         >
-                            Select Yearly Plan
+                            {{ $t('subscription.buttons.selectMonthly') }}
                         </button>
 
 
@@ -75,16 +78,16 @@
                     :class="{'ring-2 ring-indigo-600': selectedPlan === 'yearly'}"
                 >
                     <div class="px-6 py-8 bg-white sm:p-10 sm:pb-6">
-                        <h3 class="text-2xl font-semibold text-center text-gray-900">Yearly Plan</h3>
+                        <h3 class="text-2xl font-semibold text-center text-gray-900">{{ $t('subscription.yearly.title') }}</h3>
 
                         <!-- Display discounted price and original price with a line-through -->
                         <div class="mt-4 flex justify-center items-baseline text-6xl font-extrabold text-indigo-600">
                             $119.99
-                            <span class="ml-1 text-2xl font-medium text-gray-500">/yr</span>
+                            <span class="ml-1 text-2xl font-medium text-gray-500">{{ $t('subscription.yearly.period') }}</span>
                         </div>
                         <div class="mt-2 flex justify-center items-center text-xl">
                             <span class="text-gray-400 line-through">$149.99</span>
-                            <span class="ml-2 text-green-600 font-semibold">Save $30</span>
+                            <span class="ml-2 text-green-600 font-semibold">{{ $t('subscription.yearly.savings') }}</span>
                         </div>
                     </div>
                     <div class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-gray-50 space-y-6 sm:p-10 sm:pt-6">
@@ -95,7 +98,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <p class="ml-3 text-base text-gray-700">Access all courses</p>
+                                <p class="ml-3 text-base text-gray-700">{{ $t('subscription.features.allCourses') }}</p>
                             </li>
                             <li class="flex items-start">
                                 <div class="flex-shrink-0">
@@ -103,7 +106,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <p class="ml-3 text-base text-gray-700">Cancel anytime</p>
+                                <p class="ml-3 text-base text-gray-700">{{ $t('subscription.features.cancel') }}</p>
                             </li>
                             <li class="flex items-start">
                                 <div class="flex-shrink-0">
@@ -111,7 +114,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <p class="ml-3 text-base text-gray-700">Support included</p>
+                                <p class="ml-3 text-base text-gray-700">{{ $t('subscription.features.support') }}</p>
                             </li>
                             <li class="flex items-start">
                                 <div class="flex-shrink-0">
@@ -119,7 +122,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
-                                <p class="ml-3 text-base text-gray-700">Save $30 annually</p>
+                                <p class="ml-3 text-base text-gray-700">{{ $t('subscription.features.annualSavings') }}</p>
                             </li>
                         </ul>
                         <button
@@ -131,7 +134,7 @@
                             }"
                             class="w-full text-white rounded-md px-4 py-3 text-lg font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 transition-colors duration-200"
                         >
-                            Select Yearly Plan
+                            {{ $t('subscription.buttons.selectYearly') }}
                         </button>
 
                     </div>
@@ -141,8 +144,11 @@
             <!-- Display Selected Plan -->
             <div class="mt-10 text-center">
                 <p class="text-xl font-medium text-gray-700">
-                    You have selected the
-                    <span class="font-bold text-indigo-600">{{ selectedPlan === 'monthly' ? 'Monthly' : 'Yearly' }}</span> plan.
+                    {{ $t('subscription.selected.prefix') }}
+                    <span class="font-bold text-indigo-600">
+                        {{ selectedPlan === 'monthly' ? $t('subscription.selected.monthly') : $t('subscription.selected.yearly') }}
+                    </span>
+                    {{ $t('subscription.selected.suffix') }}
                 </p>
             </div>
         </div>

@@ -1,18 +1,15 @@
 <template>
-
     <Navbar />
     <div class="min-h-screen bg-gradient-to-r from-gray-100 via-pink-50 to-blue-50 ">
-        <div class="container mx-auto px-4 py-8 pb-2 mb-2   ">
-
-            <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">Course Catalog</h1>
+        <div class="container mx-auto px-4 py-8 pb-2 mb-2">
+            <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">{{ $t('courseCatalog.title') }}</h1>
 
             <div v-if="isLoading" class="flex justify-center items-center min-h-[calc(100vh-200px)] ">
-                <!--            <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500"></div>-->
-                <Loader  />
+                <Loader />
             </div>
 
             <div v-if="error" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4" role="alert">
-                <p class="font-bold">Error</p>
+                <p class="font-bold">{{ $t('common.error') }}</p>
                 <p>{{ error }}</p>
             </div>
 
@@ -23,9 +20,9 @@
                         <h2 class="text-xl font-semibold mb-2 text-gray-800">{{ course.title }}</h2>
                         <p class="text-gray-600 mb-4">{{ course.description }}</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-blue-600">${{ course.price }}</span>
+                            <span class="text-2xl font-bold text-blue-600">{{ course.price }}</span>
                             <button @click="openCourse(course.id)" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300">
-                                Enroll Now
+                                {{ $t('courseCatalog.enrollNow') }}
                             </button>
                         </div>
                     </div>
@@ -38,23 +35,21 @@
                     @click="fetchCourses(pagination.prev_page_url)"
                     class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py- px-4 rounded-l transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                    Previous
+                    {{ $t('pagination.previous') }}
                 </button>
-                <span class="text-gray-700">Page {{ pagination.current_page }} of {{ pagination.last_page }}</span>
+                <span class="text-gray-700">{{ $t('pagination.pageInfo', { current: pagination.current_page, total: pagination.last_page }) }}</span>
                 <button
                     :disabled="!pagination.next_page_url"
                     @click="fetchCourses(pagination.next_page_url)"
                     class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-r transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                    Next
+                    {{ $t('pagination.next') }}
                 </button>
             </div>
         </div>
-
     </div>
     <Footer />
 </template>
-
 <script setup>
 import {ref, onMounted} from "vue";
 import apiClient from "../axios/index.js";

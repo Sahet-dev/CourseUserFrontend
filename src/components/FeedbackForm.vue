@@ -1,33 +1,83 @@
 <template>
     <Navbar />
-    <div>
-        <div class="p-6 bg-white shadow-md rounded-lg mx-5">
-            <h1 class="text-2xl font-semibold mb-4">Submit Feedback</h1>
+    <div class="max-w-2xl mx-auto p-8">
+        <div class="bg-white/50 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-100">
+            <h1 class="text-3xl font-semibold text-gray-800 mb-6">
+                {{ $t('feedback.title') }}
+            </h1>
 
-            <form @submit.prevent="submitFeedback" class="space-y-4">
-                <div>
-                    <label for="type" class="block text-gray-700">Type</label>
-                    <select v-model="type" id="type" name="type" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                        <option value="support">Support</option>
-                        <option value="feedback">Feedback</option>
+            <form @submit.prevent="submitFeedback" class="space-y-6">
+                <div class="space-y-2">
+                    <label
+                        for="type"
+                        class="block text-sm font-medium text-gray-700"
+                    >
+                        {{ $t('feedback.type.label') }}
+                    </label>
+                    <select
+                        id="type"
+                        v-model="type"
+                        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-50/50"
+                    >
+                        <option value="support">{{ $t('feedback.type.options.support') }}</option>
+                        <option value="feedback">{{ $t('feedback.type.options.feedback') }}</option>
                     </select>
                 </div>
 
-                <div>
-                    <label for="message" class="block text-gray-700">Message</label>
-                    <textarea v-model="message" id="message" name="message" rows="4" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required></textarea>
+                <div class="space-y-2">
+                    <label
+                        for="message"
+                        class="block text-sm font-medium text-gray-700"
+                    >
+                        {{ $t('feedback.message') }}
+                    </label>
+                    <textarea
+                        id="message"
+                        v-model="message"
+                        rows="4"
+                        class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-50/50 resize-none"
+                        required
+                    />
                 </div>
 
-                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-all duration-300">
-                    Submit
+                <button
+                    type="submit"
+                    class="group relative w-full bg-blue-500 text-white py-3 px-6 rounded-xl hover:bg-blue-600 active:bg-blue-700 transition-all duration-200 flex items-center justify-center"
+                    :class="{ 'opacity-75 cursor-wait': isSubmitting }"
+                    :disabled="isSubmitting"
+                >
+                    <span>{{ $t('feedback.submit') }}</span>
+                    <svg
+                        class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-200"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
+                    </svg>
                 </button>
 
-                <div v-if="successMessage" class="text-green-500 mt-4">{{ successMessage }}</div>
+                <TransitionRoot
+                    appear
+                    show="successMessage"
+                    as="template"
+                >
+                    <div
+                        v-if="successMessage"
+                        class="text-green-500 text-center py-2 px-4 rounded-lg bg-green-50"
+                    >
+                        {{ successMessage }}
+                    </div>
+                </TransitionRoot>
             </form>
         </div>
     </div>
 </template>
-
 <script setup>
 import {ref} from 'vue';
 import axios from 'axios';

@@ -2,17 +2,16 @@
     <div class="bg-gradient-to-r from-gray-100 via-pink-50 to-blue-50">
         <Navbar />
         <div class="container mx-auto p-4">
-            <h1 class="text-2xl font-bold mb-6">Course Catalog</h1>
-            <h5 class="text-2xl mb-6 p-2">Results were found: {{ totalOccurrences }}</h5>
-            <h5 class="text-2xl mb-6 p-2">For search term: "{{ search }}"</h5>
+            <h1 class="text-2xl font-bold mb-6">{{ $t('courseSearchCatalog.title') }}</h1>
+            <h5 class="text-2xl mb-6 p-2">{{ $t('searchResults.resultsFound', { count: totalOccurrences }) }}</h5>
+            <h5 class="text-2xl mb-6 p-2">{{ $t('searchResults.forSearchTerm', { term: search }) }}</h5>
 
-            <div  v-if="loading" class=" mx-auto min-h-screen items-center pt-4">
+            <div v-if="loading" class="mx-auto min-h-screen items-center pt-4">
                 <Loader />
-
             </div>
-            <!-- Display the courses -->
+
             <div v-else-if="!loading && courses.courses && courses.courses.length">
-                <div v-for="course in courses.courses" :key="course.id" class="bg-white rounded shadow p-6 mb-6" >
+                <div v-for="course in courses.courses" :key="course.id" class="bg-white rounded shadow p-6 mb-6">
                     <div @click="openCourse(course.id)">
                         <img
                             :src="imageUrl(course.thumbnail)"
@@ -20,28 +19,25 @@
                             class="w-full h-48 object-cover rounded mb-4"
                         />
                         <h2 class="text-xl font-semibold mb-2">
-                        <span v-for="(part, index) in splitText(course.title)" :key="index">
-                            <span v-if="part.isHighlighted" class="highlight">{{ part.text }}</span>
-                            <span v-else>{{ part.text }}</span>
-                        </span>
+                            <span v-for="(part, index) in splitText(course.title)" :key="index">
+                                <span v-if="part.isHighlighted" class="highlight">{{ part.text }}</span>
+                                <span v-else>{{ part.text }}</span>
+                            </span>
                         </h2>
                         <p class="text-gray-700 mb-2">
-                        <span v-for="(part, index) in splitText(course.description)" :key="index">
-                            <span v-if="part.isHighlighted" class="highlight">{{ part.text }}</span>
-                            <span v-else>{{ part.text }}</span>
-                        </span>
+                            <span v-for="(part, index) in splitText(course.description)" :key="index">
+                                <span v-if="part.isHighlighted" class="highlight">{{ part.text }}</span>
+                                <span v-else>{{ part.text }}</span>
+                            </span>
                         </p>
-                        <p class="text-sm text-gray-500">Occurrences of "{{ search }}": {{ searchCounts[course.id] }}</p>
+                        <p class="text-sm text-gray-500">{{ $t('searchResults.occurrencesCount', { term: search, count: searchCounts[course.id] }) }}</p>
                     </div>
 
-
-
-                     <div></div>
+                    <div></div>
                     <div class="flex items-center justify-between mb-2">
-                        <div  class="text-gray-700 font-bold">
+                        <div class="text-gray-700 font-bold">
                         </div>
 
-                        <!-- Bookmark Button on the right -->
                         <button
                             @click="toggleBookmark(course)"
                             class="ml-2 text-sky-800 bg-transparent hover:bg-gray-200 rounded-full p-2"
@@ -50,19 +46,15 @@
                             <BookmarkIconSolid v-else class="w-5 h-5" />
                         </button>
                     </div>
-
-<!--                    <a :href="route('courseDetail', course.id)" class="text-blue-500 hover:underline">View Course</a>-->
                 </div>
             </div>
 
-            <!-- Show message if no courses are found -->
-            <div v-else class="text-gray-500 min-h-screen ">No courses found matching the search criteria.</div>
+            <div v-else class="text-gray-500 min-h-screen">{{ $t('searchResults.noResults') }}</div>
         </div>
 
         <Footer />
     </div>
 </template>
-
 
 
 <script setup>

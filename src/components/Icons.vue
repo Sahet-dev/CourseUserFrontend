@@ -1,7 +1,7 @@
 <template>
     <section class="why-us-section animated-element">
         <div class="container">
-            <h2 class="section-title">Why CourseApp.com?</h2>
+            <h2 class="section-title">{{ $t('whyUs.title') }}</h2>
             <div class="features-grid">
 
                 <!--                Challenges that help you learn faster-->
@@ -23,7 +23,7 @@
                             <polygon points="2.707 13.414 7.414 8.707 6 7.293 2.707 10.586 1.414 9.293 0 10.707 2.707 13.414"/>
                         </g>
                     </svg>
-                    <h3 class="feature-title">Challenges that help you learn faster</h3>
+                    <h3 class="feature-title">{{ $t('whyUs.features.challenges') }}</h3>
                 </div>
 
                 <!--                Trusted by people like you-->
@@ -43,7 +43,7 @@
 
 
 
-                    <h3 class="feature-title">Trusted by people like you</h3>
+                    <h3 class="feature-title">{{ $t('whyUs.features.trusted') }}</h3>
                 </div>
 
                 <!--                Tutorials by experts-->
@@ -60,7 +60,7 @@
 
 
 
-                    <h3 class="feature-title">Tutorials by experts</h3>
+                    <h3 class="feature-title">{{ $t('whyUs.features.tutorials') }}</h3>
                 </div>
                 <!--                Guides downloads for each tutorial-->
                 <div   class="feature-item">
@@ -79,7 +79,7 @@
                     </svg>
 
 
-                    <h3 class="feature-title">Guides downloads for each tutorial</h3>
+                    <h3 class="feature-title">{{ $t('whyUs.features.guides') }}</h3>
                 </div>
             </div>
         </div>
