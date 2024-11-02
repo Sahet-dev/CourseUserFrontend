@@ -629,7 +629,7 @@ const submitComment = () => {
 };
 
 
-const lessonVideoUrl = videoUrl => `http://localhost:8000/storage/${videoUrl}`;
+const lessonVideoUrl = videoUrl => imageUrl(videoUrl);
 function redirectToPurchase() {
     window.location.href = '/subscribe-or-purchase';
 }
