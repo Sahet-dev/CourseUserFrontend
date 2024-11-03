@@ -242,6 +242,21 @@
                 "submit": "Submit Comment"
             }
         }
+    },
+    "testimonial": {
+        "testimonial1": {
+            "text": "This platform has changed the way I learn. The tutorials are spot on.",
+            "author": "Jane Doe"
+        },
+        "testimonial2": {
+            "text": "Amazing content and great instructors!",
+            "author": "John Smith"
+        },
+        "testimonial3": {
+            "text": "Highly recommend for anyone looking to upskill.",
+            "author": "Alice Johnson"
+        }
     }
+
 
 }

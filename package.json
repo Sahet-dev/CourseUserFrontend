@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --port=4000",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+     "build:css": "npx tailwindcss -i ./src/mainstyle.css -o ./dist/output.css --watch"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.1.0",

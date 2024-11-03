@@ -1,159 +1,118 @@
 <template>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
+    <footer class="bg-gradient-to-b from-gray-900 to-gray-950 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <!-- Footer Logo & About -->
-                <div class="footer-section about">
-                    <h2 class="logo">{{ $t('footer.logo') }}</h2>
-                    <p>{{ $t('footer.description') }}</p>
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                        {{ $t('footer.logo') }}
+                    </h2>
+                    <p class="text-sm leading-relaxed text-gray-400 max-w-sm">
+                        {{ $t('footer.description') }}
+                    </p>
                 </div>
 
                 <!-- Footer Navigation Links -->
-                <div class="footer-section links">
-                    <h3>{{ $t('footer.links.quickLinks') }}</h3>
-                    <ul>
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-white">{{ $t('footer.links.quickLinks') }}</h3>
+                    <ul class="space-y-2">
                         <li>
-                            <router-link to="/">{{ $t('footer.links.home') }}</router-link>
+                            <router-link
+                                to="/"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 text-sm block transform hover:translate-x-1"
+                            >
+                                {{ $t('footer.links.home') }}
+                            </router-link>
                         </li>
                         <li>
-                            <router-link to="/courses/catalog">{{ $t('footer.links.coursesCatalog') }}</router-link>
+                            <router-link
+                                to="/courses/catalog"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 text-sm block transform hover:translate-x-1"
+                            >
+                                {{ $t('footer.links.coursesCatalog') }}
+                            </router-link>
                         </li>
-                        <li><a href="#">{{ $t('footer.links.aboutAndContact') }}</a></li>
-                        <li><button @click="goToFeedback">{{ $t('footer.links.feedback') }}</button></li>
+                        <li>
+                            <a
+                                href="#"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 text-sm block transform hover:translate-x-1"
+                            >
+                                {{ $t('footer.links.aboutAndContact') }}
+                            </a>
+                        </li>
+                        <li>
+                            <button
+                                @click="goToFeedback"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 text-sm block transform hover:translate-x-1"
+                            >
+                                {{ $t('footer.links.feedback') }}
+                            </button>
+                        </li>
                     </ul>
                 </div>
 
                 <!-- Footer Contact Information -->
-                <div class="footer-section contact">
-                    <h3>{{ $t('footer.contact.title') }}</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> {{ $t('footer.contact.address') }}</p>
-                    <p><i class="fas fa-phone"></i> {{ $t('footer.contact.phone') }}</p>
-                    <p><i class="fas fa-envelope"></i> support@courseapp.com</p>
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-white">{{ $t('footer.contact.title') }}</h3>
+                    <div class="space-y-2">
+                        <p class="flex items-center text-sm text-gray-400 group">
+                            <span class="w-5 h-5 mr-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-300">📍</span>
+                            {{ $t('footer.contact.address') }}
+                        </p>
+                        <p class="flex items-center text-sm text-gray-400 group">
+                            <span class="w-5 h-5 mr-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-300">📞</span>
+                            {{ $t('footer.contact.phone') }}
+                        </p>
+                        <p class="flex items-center text-sm text-gray-400 group">
+                            <span class="w-5 h-5 mr-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-300">✉️</span>
+                            support@courseapp.com
+                        </p>
+                    </div>
                 </div>
 
                 <!-- Footer Social Media Links -->
-                <div class="footer-section social">
-                    <h3>{{ $t('footer.social.followMe') }}</h3>
-                    <div class="social-icons">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <Instagram width="30px" height="30px" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="bg-white">
-                                        <YouTubeIcon width="30px" height="30px" />
-                                    </span>
-
-                                </a>
-                            </li>
-                        </ul>
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-white">{{ $t('footer.social.followMe') }}</h3>
+                    <div class="space-y-3">
+                        <a
+                            href="https://www.instagram.com/sahetkakajanov"
+                            class="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300 group"
+                        >
+                            <Instagram class="w-5 h-5 text-pink-500 group-hover:text-pink-400" />
+                            <span class="text-sm">Sahet Kakajanov</span>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@itcoachtm1209"
+                            class="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300 group"
+                        >
+                            <YouTubeIcon class="w-5 h-5 text-red-500 group-hover:text-red-400" />
+                            <span class="text-sm">IT CoachTM</span>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            {{ $t('footer.copyright') }} |
-            {{ $t('footer.copyright2') }}
+            <!-- Footer Bottom -->
+            <div class="mt-16 pt-8 border-t border-gray-800">
+                <div class="text-center text-sm text-gray-500">
+                    <span>{{ $t('footer.copyright') }}</span>
+                    <span class="mx-2">|</span>
+                    <span>{{ $t('footer.copyright2') }}</span>
+                </div>
+            </div>
         </div>
     </footer>
 </template>
+
 <script setup>
 import { useRouter } from 'vue-router';
-import TiktokIcon from "./socialmed/Tiktok.vue";
 import Instagram from "./socialmed/Instagram.vue";
 import YouTubeIcon from "./socialmed/Youtube.vue";
+
 const router = useRouter();
-function goToFeedback(){
-    router.push({ name: 'Feedback'});
+
+function goToFeedback() {
+    router.push({ name: 'Feedback' });
 }
 </script>
-<style scoped>
-.footer {
-    background-color: #2d3748;
-    color: white;
-    padding: 40px 0;
-    font-size: 0.875rem;
-}
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    text-align: left;
-}
-
-.footer-section {
-    flex: 1 1 200px;
-    margin: 16px;
-}
-
-.footer-section h3 {
-    font-size: 1.25rem;
-    margin-bottom: 16px;
-}
-
-.footer-section p, .footer-section ul, .footer-section a {
-    color: #e2e8f0; /* Light gray text */
-    margin-bottom: 8px;
-    text-decoration: none;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 8px;
-}
-
-.footer-section ul li a:hover {
-    color: #ecc94b; /* Yellow text on hover */
-}
-
-/* Social Media Links */
-.social-icons a {
-    display: inline-block;
-    margin-right: 16px;
-    color: #e2e8f0; /* Light gray */
-    font-size: 1.25rem;
-}
-
-.social-icons a:hover {
-    color: #ecc94b; /* Yellow on hover */
-}
-
-/* Footer Bottom */
-.footer-bottom {
-    background-color: #1a202c; /* Darker gray */
-    text-align: center;
-    padding: 16px 0;
-    font-size: 0.75rem;
-    margin-top: 40px;
-    color: #a0aec0; /* Light gray text */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-section {
-        margin-bottom: 24px;
-    }
-}
-</style>

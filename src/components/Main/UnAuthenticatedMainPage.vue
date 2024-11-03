@@ -127,9 +127,17 @@
             <div class="container">
                 <h2 class="section-title">{{ $t('testimonials.title') }}</h2>
                 <div class="testimonials-grid">
-                    <div v-for="comment in comments" :key="comment.id" class="testimonial-item">
-                        <p class="testimonial-text">"{{ comment.text }}"</p>
-                        <p class="testimonial-author">{{ comment.author }}</p>
+                    <div  class="testimonial-item">
+                        <p class="testimonial-text">"{{ $t('testimonial.testimonial1.text') }}"</p>
+                        <p class="testimonial-author">{{ $t('testimonial.testimonial1.author') }}</p>
+                    </div>
+                    <div  class="testimonial-item">
+                        <p class="testimonial-text">"{{ $t('testimonial.testimonial2.text') }}"</p>
+                        <p class="testimonial-author">{{ $t('testimonial.testimonial2.author') }}</p>
+                    </div>
+                    <div  class="testimonial-item">
+                        <p class="testimonial-text">"{{ $t('testimonial.testimonial3.text') }}"</p>
+                        <p class="testimonial-author">{{ $t('testimonial.testimonial3.author') }}</p>
                     </div>
                 </div>
                 <div class="more-testimonials">
@@ -190,10 +198,11 @@ const checkMobile = () => {
 
 
 const comments = ref([
-    {id: 1, text: 'This platform has changed the way I learn. The tutorials are spot on.', author: 'Jane Doe'},
-    {id: 2, text: 'Amazing content and great instructors!', author: 'John Smith'},
-    {id: 3, text: 'Highly recommend for anyone looking to upskill.', author: 'Alice Johnson'}
-]);
+        { "id": 1, "text": "Bu platforma meniň öwreniş usulymy üýtgetdi. Sapaklar gaty ýerlikli.", "author": "Jane Doe" },
+        { "id": 2, "text": "Ajaýyp mazmun we uly mugallymlar!", "author": "John Smith" },
+        { "id": 3, "text": "Öz başarnyklaryny ýokarlandyrmak isleýänler üçin hökman maslahat berýärin.", "author": "Alice Johnson" }
+    ]
+);
 const loading = ref(true);
 
 const fetchCourses = async () => {

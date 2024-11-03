@@ -1,8 +1,7 @@
-import './mainstyle.css'
 import { createApp } from 'vue'
+import './mainstyle.css'
 import router from './router';
 import App from './App.vue'
-// Supports weights 100-900
 import '@fontsource-variable/inter';
 import EN from './locale/en.json';
 import TM from './locale/tm.json';

@@ -202,7 +202,7 @@
 
     "course": {
         "info": {
-            "lessons": "sany sapak",
+            "lessons": "Sapaklar ",
             "completed": "% bitdi",
             "totalLessons": "Sapaklar",
             "select": "Sapak saýlaň:"
@@ -242,7 +242,25 @@
                 "submit": "Teswiri Ugrat"
             }
         }
+    },
+    "testimonial": {
+        "testimonial1": {
+            "text": "Bu platforma meniň öwreniş usulymy üýtgetdi. Sapaklar gaty ýerlikli.",
+            "author": "Jahan Berdiýewa"
+        },
+        "testimonial2": {
+            "text": "Ajaýyp mazmun we tejribeli mugallymlar!",
+            "author": "Myrat Aly"
+        },
+        "testimonial3": {
+            "text": "Öz başarnyklaryny ýokarlandyrmak isleýänler üçin hökman maslahat berýärin.",
+            "author": "Daýanç Agageldiýew"
+        }
     }
+
+
+
+
 
 
 
