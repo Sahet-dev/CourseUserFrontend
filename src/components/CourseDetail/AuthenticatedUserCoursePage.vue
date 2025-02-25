@@ -57,6 +57,8 @@
                                         <ul class="space-y-4">
                                             <li v-for="activity in activities" :key="activity.id" class="flex items-start space-x-4 border-b pb-4 last:border-b-0">
                                                 <!-- Icon Container -->
+
+
                                                 <div class="w-14 h-14 flex items-center justify-center bg-blue-50 rounded-full shadow-md">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />

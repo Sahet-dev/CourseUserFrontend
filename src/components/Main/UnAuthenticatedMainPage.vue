@@ -33,7 +33,7 @@
                         <button class="px-5 py-2 font-semibold bg-yellow-400 hover:bg-yellow-600 text-black">
                             {{ $t('hero.startSubscription') }}
                         </button>
-                        <button class="px-5 py-2 font-semibold bg-white text-gray-900 hover:bg-gray-200">
+                        <button class="px-5 py-2 font-semibold bg-white text-gray-900 hover:bg-gray-200" @click="redirectToCatalog">
                             {{ $t('hero.browseCatalog') }}
                         </button>
                     </div>
@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <div class="see-all-courses">
-                    <button class="see-all-button">{{ $t('popularCourses.seeAll') }}</button>
+                    <button class="see-all-button" @click="redirectToCatalog">{{ $t('popularCourses.seeAll') }}</button>
                 </div>
             </div>
         </section>
@@ -117,7 +117,7 @@
                     </div>
                 </div>
                 <div class="button-container-8r9s0t">
-                    <button class="button-1u2v3w">{{ $t('latestCourses.seeAll') }}</button>
+                    <button class="button-1u2v3w" @click="redirectToCatalog">{{ $t('latestCourses.seeAll') }}</button>
                 </div>
             </div>
         </section>
@@ -175,6 +175,10 @@ import Lenis from "@studio-freight/lenis";
 import {useRouter} from "vue-router";
 import CoursesList from "../CoursesList.vue";
 
+
+const redirectToCatalog = () => {
+    router.push('/courses/catalog')
+}
 
 import image from '../../assets/cat.png';
 import bgImage from '../../assets/bgcat.png';

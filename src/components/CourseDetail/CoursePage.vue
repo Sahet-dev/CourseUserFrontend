@@ -1,6 +1,5 @@
 <template>
     <div class="bg-gradient-to-r from-gray-100 via-pink-50 to-blue-50">
-
         <Navbar/>
         <div class="container mx-auto   ">
             <div  v-if="loading" class=" mx-auto min-h-screen items-center pt-4">

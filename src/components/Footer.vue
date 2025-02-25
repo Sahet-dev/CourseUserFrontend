@@ -27,7 +27,7 @@
                             </router-link>
                         </li>
                         <li>
-                            <a href="#" class="nav-link">
+                            <a href="https://sahet-dev.com/" class="nav-link">
                                 {{ $t('footer.links.aboutAndContact') }}
                             </a>
                         </li>
