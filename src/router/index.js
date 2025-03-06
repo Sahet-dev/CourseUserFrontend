@@ -12,6 +12,7 @@ import Prices from "../components/Prices.vue";
 import SuccessPage from "../components/SuccessPage.vue";
 import CoursesList from "../components/CoursesList.vue";
 import EmailVerification from "../components/EmailVerification.vue";
+import RecoverPassword from "../components/RecoverPassword.vue";
 
 const routes = [
     {
@@ -79,6 +80,11 @@ const routes = [
         path: '/email-verification',
         name: 'EmailVerification',
         component: EmailVerification,
+    },
+    {
+        path: '/forgot-password',
+        name: 'RecoverPassword',
+        component: RecoverPassword,
     },
 
 ];
