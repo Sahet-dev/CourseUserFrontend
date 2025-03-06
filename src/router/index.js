@@ -11,6 +11,7 @@ import CourseCatalog from "../components/CourseCatalog.vue";
 import Prices from "../components/Prices.vue";
 import SuccessPage from "../components/SuccessPage.vue";
 import CoursesList from "../components/CoursesList.vue";
+import EmailVerification from "../components/EmailVerification.vue";
 
 const routes = [
     {
@@ -73,6 +74,11 @@ const routes = [
         path: '/success',
         name: 'Success',
         component: SuccessPage,
+    },
+    {
+        path: '/email-verification',
+        name: 'EmailVerification',
+        component: EmailVerification,
     },
 
 ];
